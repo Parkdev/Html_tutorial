@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body onload="showTime();">
+  <div id="clock"></div><br>
+  <button onclick="showTime();">다시시작</button>
+  <button onclick="stopClock();">일시 정지</button>
+  <script>
+    var timerID;
+    function showTime() {
+      var clock = document.getElementById("clock");
+      clock.style.backgroundColor = "yellow";
+      clock.style.color = "blue";
+      clock.style.fontWeight = "bold";
+      timerID = setInterval( function() {
+        today = new Date();
+        clock.innerHTML = today.toLocaleString();
+      }, 1000);
+    }
+    function stopClock() {
+      clearInterval(timerID);
+    }
+  </script>
+
+</body>
+</html>

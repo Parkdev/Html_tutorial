@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function changeColor() {
+      document.body.style.backgroundColor =
+        document.myform.color.value;
+    }
+    function restorebgColor() {
+      document.body.style.backgroundColor = "White";
+    }
+
+  </script>
+</head>
+<body onload="alert('버튼을 클릭해 보세요')" onunload="alert('bye')">
+  <form action="" name="myform">
+    <label id="bgcolor" on> 배경화면 색 지정</label>
+    <input type="color" name="color">
+    <input type="button" value="색상변경" onclick="changeColor()">
+    <input type="button" name="" value="원래대로" onclick="restorebgColor()">
+  </form>
+
+</body>
+</html>

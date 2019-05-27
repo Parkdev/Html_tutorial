@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body onLoad="showTime();">
+  <div id="clock"></div>
+  <script>
+    function showTime() {
+      today = new Date();
+      today = today.toLocaleString();
+      var clock = document.getElementById("clock");
+      clock.style.backgroundColor = "yellow";
+      clock.style.color = "blue";
+      clock.style.fontWeight = "bold";
+      clock.innerHTML = today;
+      setTimeout("showTime()", 1000);
+    }
+  </script>
+</body>
+</html>

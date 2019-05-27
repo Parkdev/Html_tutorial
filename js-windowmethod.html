@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body onload="window.resizeTo(500,350)">
+  <p>브라우저 크기조정</p>
+  <input type="button" onclick="sizeUp()" value="확대">
+  <input type="button" onclick="sizeDown()" value="축소">
+  <br>
+  <br>
+  <hr>
+  <p>브라우저 위치 조정</p>
+  <input type="button" onclick="moveUp()" name="" value="상">
+  <input type="button" onclick="moveDown()" name="" value="하">
+  <input type="button" onclick="moveLeft()" name="" value="좌">
+  <input type="button" onclick="moveRight()" name="" value="우">
+<script>
+  function sizeUp() { window.resizeBy(20, 20);}
+  function sizeDown() { window.resizeBy(-20, -20);}
+  function moveUp() { window.moveBy(0, -20);}
+  function moveDown() { window.moveBy(0, 20);}
+  function moveLeft() { window.moveBy(-20,0);}
+  function moveRight() { window.moveBy(20,0);}
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>왜안되지</title>
+  <script>
+    var timerID;
+    function Show(n) {
+      if (n<1) {
+        clearTimeout(timerID);
+        location.replace("js-setTime.html");
+      }
+      else {
+        myArea = document.getElementById("myArea");
+        myArea.innerHTML = (n+"초 후에 새 문서가 표시됩니다.");
+        myArea.style.backgrsoundColor = "yellow";
+        myArea.style.color = "blue";
+        myArea.style.fontWeight = "bold";
+        myArea.style.fontSize = "30pt";
+        timerID = setTimeout("Show(" + (n-1) + ")", 1000);
+      }
+    }
+  </script>
+</head>
+<body onLoad="Show(5);">
+  <span id="myArea"></span>
+</body>
+</html>
