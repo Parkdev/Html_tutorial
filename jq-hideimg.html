@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    img { width: 250px; height: 60px;}
+  </style>
+  <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("img").click(function() {
+        var imgURL=$(this).attr("alt");
+        alert(imgURL);
+        $(this).attr("name","그림").attr("alt","짜잔");
+        $(this).css({"height" : "120px", "width" : "500px"});
+      });
+      $("#hide").click(function() {
+        $("img").hide("fast").removeAttr("alt");
+      });
+      $("#show").click(function() {
+        $("img").show("slow");
+      });
+    });
+  </script>
+</head>
+<body>
+  <img src="https://w.namu.la/s/8aa91b9464eccf57f207f669fc3b99fadb4a13e81bfb345b74a163d21c6f605b7ec41123a6d93e52e8e6fbc50b826e5a0e500a331a0bd496d8f92dce1732706ea538c8b02085e438af67a2fccf8810439eec2cbf5e7a7cb9135384e2e4d1615b" alt="grim"><br>
+  <button id="show">그림 보이기</button>
+  <button id="hide">그림 숨기기</button>
+
+</body>
+</html>

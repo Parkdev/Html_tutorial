@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    div { width: 100px; height: 100px;}
+    #div1 { background-color: red; display: none;}
+    #div2 { background-color: green;}
+    #div3 { float: left; margin-right: 10px; background-color: lightblue;}
+    #div4 { float: left; background-color: magenta;}
+    #div5 { float: left; margin-left: 10px; background-color: magenta;}
+    #div6 { float: left; margin-left: 10px; background-color: magenta;}
+  </style>
+  <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script>
+    $(document).ready( function() {
+      $("#btn1").click( function() {
+        $("#div1").fadeIn( 1000, function() {
+          $("#btn1").hide();
+        });
+      });
+      $("#div2").click( function() {
+        $("#div2").after(
+        "<b>초록색 박스가 페이드아웃되었습니다.</b><br>"
+        );
+        $(this).fadeOut("slow");
+      });
+      $("#btn2").click(function() {
+        $("#div3").fadeToggle("fast");
+      });
+      $("#div4, #div5, #div6").click( function() {
+        $("#div4").fadeTo("slow", 0.1);
+        $("#div5").fadeTo("fast", 0.3);
+        $("#div6").fadeTo("2000", 0.6);
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="btn1">빨간 박스가 페이드인됩니다.</button><br><br>
+  <div id="div1">fadeIn()</div><br>
+  <div id="div2">fadeOut() 클릭</div><br>
+  <div id="div3">fadeToggle()</div>
+  <button id="btn2">fadeToggle()</button>
+  <br clear="both"><br>
+  <div id="div4">fadeTo(, 0.1, ) 클릭</div>
+  <div id="div5">fadeTo(, 0.3, ) 클릭</div>
+  <div id="div6">fadeTo(, 0.6, ) 클릭</div>
+</body>
+</html>
